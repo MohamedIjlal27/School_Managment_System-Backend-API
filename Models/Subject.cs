@@ -6,6 +6,6 @@ namespace school_managment_system_backend.Models
     {
         [Key]
         public int subId { get; set; }
-        public int subName { get; set; }
+        public string subName { get; set; }
     }
 }

@@ -78,7 +78,7 @@ namespace school_managment_system_backend.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult> DeleteTeacher(int id)
+        public async Task<ActionResult> DeleteTeacher(int id)   
         {
             if (_dataBaseContext.Teachers == null)
             {
@@ -95,6 +95,17 @@ namespace school_managment_system_backend.Controllers
             await _dataBaseContext.SaveChangesAsync();
 
             return Ok();
+        }
+
+
+        [HttpGet("GetTeacherNames")]
+        public async Task<ActionResult<IEnumerable<string>>> GetTeacherNames()
+        {
+            var teacherNames = await _dataBaseContext.Teachers
+                                                .Select(t => t.teachFirstName)
+                                                .ToListAsync();
+
+            return teacherNames;
         }
     }
 }

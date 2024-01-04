@@ -12,7 +12,7 @@ using school_managment_system_backend.Models;
 namespace school_managment_system_backend.Migrations
 {
     [DbContext(typeof(DataBaseContext))]
-    [Migration("20240103131026_initial")]
+    [Migration("20240104071019_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -129,8 +129,9 @@ namespace school_managment_system_backend.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("subId"));
 
-                    b.Property<int>("subName")
-                        .HasColumnType("int");
+                    b.Property<string>("subName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("subId");
 

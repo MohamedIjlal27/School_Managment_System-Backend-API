@@ -78,7 +78,7 @@ namespace school_managment_system_backend.Migrations
                 {
                     subId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    subName = table.Column<int>(type: "int", nullable: false)
+                    subName = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {

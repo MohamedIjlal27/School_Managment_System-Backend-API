@@ -126,8 +126,9 @@ namespace school_managment_system_backend.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("subId"));
 
-                    b.Property<int>("subName")
-                        .HasColumnType("int");
+                    b.Property<string>("subName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("subId");
 
