@@ -97,7 +97,33 @@ namespace school_managment_system_backend.Controllers
             return Ok();
         }
 
+        //[HttpGet("GetSubjectsAndTeachersByStudentId/{studentId}")]
+        //public async Task<ActionResult<IEnumerable<SubjectTeachersDeatils>>> GetSubjectsAndTeachersByStudentId(int studentId)
+        //{
+        //    try
+        //    {
+        //        var subjectTeacherDetails = await (
+        //            from allocate in _dataBaseContext.Allocate_Subjects
+        //            join teacher in _dataBaseContext.Teachers on allocate.teacherId equals teacher.TeacherId
+        //            join subject in _dataBaseContext.Subjects on allocate.SubjectId equals subject.SubjectId
+        //            where allocate.StudentId == studentId
+        //            select new SubjectTeachersDeatils
+        //            {
+        //                Subject = subject.SubjectName,
+        //                Teacher = teacher.TeacherName
+        //            }).ToListAsync();
 
-       
+        //        return Ok(subjectTeacherDetails);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        // Handle exceptions appropriately
+        //        return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+        //    }
+        //}
+
+
+
+
     }
 }

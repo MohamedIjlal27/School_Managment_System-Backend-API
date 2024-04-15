@@ -53,7 +53,7 @@ namespace school_managment_system_backend.Controllers
             _dataBaseContext.Students.Add(student);
             await _dataBaseContext.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetStudent), new { id = student.id }, student);
+            return Ok();
         }
 
         [HttpPut("{id}")]
@@ -118,7 +118,7 @@ namespace school_managment_system_backend.Controllers
             catch (Exception ex)
             {
                 
-                return BadRequest(new { Error = "Error calculating age." });
+                return BadRequest(ex.Message);
             }
         }
 
